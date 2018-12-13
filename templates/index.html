@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>{{message}}</h1>
+    <h1>計算するサイト</h1>
+    <p>jsで</p>
+    <script type="text/javascript">
+        function Sample1(){
+            var hoge = Sample1_form.textbox.value;  //テキストエリアの値を取得
+            var hoge2 = Sample1_form.textbox2.value
+            var ans = parseInt(hoge) + parseInt(hoge2)
+            alert("答えは"+ ans+　"です");
+        }
+    </script>
+    </head>
+
+    <body>
+    <form name="Sample1_form" action="Sample1.html">
+    <input type="text" name="textbox">+<input type="text" name="textbox2">
+    <input type="button" value="Sample1" onclick="Sample1()">
+<!--    <a href="./get">GETに飛びます</a><br>  -->
+    </form>
+    <p>python側で</p>
+    <form action = {{url_for('posttest')}} method = "POST">
+　  <input type = 'text' name = "num" />  +
+　  <input type = 'text' name = "num" />
+
+　  <button type = "submit" name = "action" value = 'submit1'>submit</button>　
+　  <button type = "submit" name = "action" value = 'submit2'>submit2</button>
+　　</form>
+  </body>
+</html>
